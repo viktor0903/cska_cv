@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: cska-cv-service  # Adjusted to comply with Kubernetes naming conventions
+spec:
+  selector:
+    app: cska-cv  # Adjusted to comply with Kubernetes naming conventions
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 8000
+  type: LoadBalancer

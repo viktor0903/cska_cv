@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cska-cv-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: cska-cv
+  template:
+    metadata:
+      labels:
+        app: cska-cv
+    spec:
+      containers:
+      - name: cska-cv
+        image: viktor143/cska_cv:latest  # Change to your actual Docker image
+        ports:
+        - containerPort: 8000

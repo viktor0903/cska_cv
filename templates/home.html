@@ -1,0 +1,193 @@
+{% load static %}
+{% load django_bootstrap5%}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.js'></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSKA Sofia CV</title>
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</head>
+
+<style>
+
+    body, h1, h2, ul, li, p, table {
+        margin: 10px;
+        padding: 10px;
+    }
+
+    body {
+        font-family: Arial, sans-serif;
+        background-color: black; /* Change the background color to your desired shade of grey */
+        color: white;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column; /* Arrange content in a vertical layout */
+        justify-content: center; /* Vertically center content */
+        align-items: center; /* Horizontally center content */
+        min-height: 100vh; /* Ensure content takes at least the full viewport height */
+    }
+
+    /* Style for navigation bar */
+    nav {
+        background-color: #8B0000; /* Change the background color of the navigation bar */
+        padding: 10px;
+        width: 100%; /* Ensure the navigation bar spans the full width */
+    }
+
+    nav a {
+        color: white;
+        text-decoration: none;
+        margin: 0 10px;
+    }
+
+    .multicolumn {
+        column-count: 2;
+        column-gap: 20px;
+    }
+
+    /* Style for tables */
+    table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    /* Style for image gallery */
+    #gallery {
+        text-align: center;
+    }
+
+    #gallery img {
+        max-width: 100%;
+        height: auto;
+        margin-bottom: 10px;
+    }
+
+</style>
+
+<nav class="navbar navbar-expand-lg ">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"style="color: black">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="#" style="color: white">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#multicolumn-text" style="color: white">Introduction</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'calendar_page' %}" style="color: white">Match Calendar</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#members" style="color: white">Best Players</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#tables" style="color: white">Team</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#contact" style="color: white">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+<body>
+     <section id="gallery">
+        {% load static %}
+        <img src="{% static 'images/CSKA_logo.jpg' %}" alt="My image" style="border-radius: 25px;height: 200px;width: 200px">
+    </section>
+
+    <section id="multicolumn-text">
+    <h2 style="text-align: center">Introduction of the team</h2>
+    <div class="multicolumn">
+        <p>CSKA Sofia, established in 1948, is a renowned football club in Bulgaria with a history filled with triumphs. The team has secured numerous domestic championships, international recognition, and an impressive tally of 31 trophies in the national championship.</p>
+        <p>The club's home matches are played at the Vasil Levski National Stadium, where passionate fans come together to support their beloved team. The vibrant atmosphere at the stadium is something truly remarkable.</p>
+        <p>CSKA Sofia has a strong tradition of developing young talents, and over the years, it has produced some of the best footballers in the country. The dedication and hard work of the players, along with the coaching staff, have made CSKA Sofia a force to be reckoned with in Bulgarian football.</p>
+        <p>The club continues to strive for excellence, both on and off the field. With a commitment to community involvement and youth development, CSKA Sofia is not just a football club but a symbol of pride for the city and its supporters.</p>
+    </div>
+</section>
+
+    <section id="members">
+        <h2>Best Players</h2>
+        <ul>
+            <li><strong>ТОБИАС ХАИНЦ</strong></li>
+            <p>ПОЗИЦИЯ:ПОЛУЗАЩИТНИК &nbsp
+                ДЪРЖАВА:НОРВЕГИЯ&nbsp
+                РЪСТ:174 СМ&nbsp
+                ВЪЗРАСТ:25Г</p>
+            <li><strong>Member 2</strong></li>
+            <p>Paragraph about Member 2</p>
+        </ul>
+    </section>
+
+
+<section id="tables">
+    <h2>Team</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Player</th>
+                <th>Age</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    <img src="{% static 'images/густаво.jpeg' %}" alt="Player 1">
+                    <p>Gustavo Busatto</p>
+
+                </td>
+                <td>25</td>
+            </tr>
+            <tr>
+                <td>
+                    <img src="{% static 'images/Jurgen Mattheij.png' %}" alt="Player 2" style="max-width: 150px;max-height: 150px">
+                    <p>Jurgen Mattheij</p>
+
+                </td>
+                <td>30</td>
+            </tr>
+            <tr>
+                <td>
+                    <img src="{% static 'images/Brayan Córdoba.jpeg' %}" alt="Player 3"style="max-width: 150px;max-height: 150px">
+                    <p>Brayan Córdoba</p>
+
+                </td>
+                <td>24</td>
+            </tr>
+            <tr>
+                <td>
+                    <img src="{% static 'images/hristiyan petrov.jpeg' %}" alt="Player 4"style="max-width: 150px;max-height: 150px">
+                    <p>Hristiyan Petrov</p>
+
+                </td>
+                <td>21</td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+
+    <section id="contact"style="margin-left: 44px;padding-left: 44px">
+        <h2>Contact Information</h2>
+        <address>
+            <p><a href="https://cska.bg"style="color: white">Website: https://cska.bg
+                <img src="{% static "images/email_image.png" %}" alt="Email" style="width: 20px; height: 20px;background-color: orange">
+                </a>
+            </p>
+            <p><a href="mailto:fanshop@cska.bg"style="color: white ">Email: fanshop@cska.bg</a></p>
+            <p><a href="tel:+359 88 288 1948"style="color: white">Phone: +359 88 288 1948</a></p>
+        </address>
+    </section>
+
+    <footer>
+        <p>&copy; 2023 Team CSKA Sofia</p>
+    </footer>
+</body>
+
+
+</html>
