@@ -16,9 +16,9 @@
 
 <style>
     nav {
-        background-color: #8B0000; /* Change the background color of the navigation bar */
+        background-color: #8B0000;
         padding: 10px;
-        width: 100%; /* Ensure the navigation bar spans the full width */
+        width: 100%;
     }
 </style>
 <body>
@@ -45,7 +45,7 @@
             var calendarEl = document.getElementById('calendar');
             var calendar = new FullCalendar.Calendar(calendarEl, {
                 initialView: 'dayGridMonth',
-                events: '{% url "calendar_page" %}',  {# Update with the correct URL #}
+                events: '{% url "calendar_page" %}',
                 eventRender: function (info) {
                     info.el.classList.add('custom-calendar-date');
 
